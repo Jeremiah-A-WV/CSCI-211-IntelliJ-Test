@@ -9,5 +9,6 @@ public class Main {
         SongBoard mySongBoard;
         mySongBoard = new SongBoard();
         mySongBoard.printTopTen();
+        mySongBoard.printSongsTenToTwenty();
     }
 }

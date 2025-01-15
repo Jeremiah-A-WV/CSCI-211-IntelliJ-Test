@@ -1,6 +1,8 @@
 package songboard;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /** Class for storing song rankings, initially read from CSV */
 public class SongBoard implements SongBoardInterface {
@@ -44,6 +46,21 @@ public class SongBoard implements SongBoardInterface {
 		System.out.println(songBoardTitle);
 		System.out.println("The Top Ten Are:");
 		for (int i = 0; i < 10; i++) {
+			rank = songArray[i].GetRank();
+			artist = songArray[i].GetArtist();
+			songname = songArray[i].GetSongName();
+			System.out.println(rank + ", " + artist + ", " + songname);
+		}
+	}
+
+	public void printSongsTenToTwenty() {
+		int rank;
+		String artist;
+		String songname;
+		// Print header
+		System.out.println(songBoardTitle);
+		System.out.println("The Top 11 to 20 Are:");
+		for (int i = 10; i < 20; i++) {
 			rank = songArray[i].GetRank();
 			artist = songArray[i].GetArtist();
 			songname = songArray[i].GetSongName();
